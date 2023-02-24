@@ -3,7 +3,7 @@
 /**
  * swap_items - Swaps two items in an array.
  * @array: The array to modify.
- * @1: The index of the left item.
+ * @l: The index of the left item.
  * @r: The index of the right item.
  */
 void swap_items(int *array, size_t l, size_t r)
@@ -12,17 +12,17 @@ void swap_items(int *array, size_t l, size_t r)
 
 	if (array != NULL)
 	{
-		tmp = array[1];
-		array[1] = array[r];
+		tmp = array[l];
+		array[l] = array[r];
 		array[r] = tmp;
 	}
 }
 
 /**
- * quick_sort_range_lomuto - sorts a sub array using the
- * quick sort algorithm and lomuto's partition scheme.
+ * quick_sort_range_lomuto - Sorts a sub array using the
+ * quick sort algorithm and Lomuto's partition scheme.
  * @array: The array containing the sub-array.
- * @low: The stating position of the sub-array.
+ * @low: The starting position of the sub-array.
  * @high: The ending position of the sub-array.
  * @size: The length of the array.
  */
@@ -33,7 +33,6 @@ void quick_sort_range_lomuto(int *array, size_t low, size_t high, size_t size)
 
 	if ((low >= high) || (array == NULL))
 		return;
-
 	pivot = array[high];
 	k = low;
 	for (i = low; i < high; i++)
